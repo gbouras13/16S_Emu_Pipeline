@@ -8,6 +8,8 @@ import pandas as pd
 import os
 from snakemake.remote.HTTP import RemoteProvider as HTTPRemoteProvider
 
+# https://stackoverflow.com/questions/66063221/does-snakemake-support-none-file-input
+
 HTTP = HTTPRemoteProvider()
 SAMPLES = pd.read_csv("metadata.csv").set_index("samples", drop=False)
 EMU_DB_DIR = "DB"
@@ -86,7 +88,6 @@ rule krona_input:
         reads = 'emu_results/{sample}_krona_input.txt'
     script:
         'Scripts/create_tsv_for_krona.py'
-
 
 rule krona:
     input:

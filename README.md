@@ -13,7 +13,7 @@ The only inputs required are:
 1. Create and Activate the qc conda environment
 
 ```console
-conda env create -f qc_environment.yml
+conda env create -f qc_environment.yaml
 conda activate nanopore_qc_env
 ```
 
@@ -34,7 +34,7 @@ snakemake -s qc.smk -c 16
 
 ```console
 conda deactivate
-conda env create -f emu_environment.yml
+conda env create -f emu_environment.yaml
 conda activate emu_env
 ```
 
