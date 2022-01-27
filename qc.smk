@@ -32,7 +32,7 @@ rule concatenate_fastqs:
     output:
         'fastqs/filtlong_fastqs/{sample}_conc.fastq'
     shell:
-        'gzcat {input.fastq_files} > {output}'
+        'gunzip -c {input.fastq_files} > {output}'
 
 rule filtlong:
     input:
