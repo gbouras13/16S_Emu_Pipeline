@@ -1,0 +1,40 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+emu                3              0              0
+get_db             1              1              1
+krona              3              1              1
+krona_input        3              1              1
+read_count         3              1              1
+total             14              0              1
+
+Select jobs to execute...
+
+[Thu Jan 27 17:26:13 2022]
+rule read_count:
+    input: fastqs/porechopped/barcode01.fastq.gz
+    output: emu_results/barcode01_readcount.txt
+    jobid: 5
+    wildcards: sample=barcode01
+    resources: tmpdir=/var/folders/2q/srp24kx525982p1wr0crt0tc0000gq/T
+
+[Thu Jan 27 17:26:13 2022]
+Finished job 5.
+1 of 14 steps (7%) done
+Select jobs to execute...
+
+[Thu Jan 27 17:26:13 2022]
+rule get_db:
+    input: gitlab.com/treangenlab/emu/-/archive/v1.0.1/emu-v1.0.1.tar.gz
+    output: DB, DB/species_taxid.fasta, DB/names_df.tsv, DB/nodes_df.tsv, DB/unique_taxids.tsv
+    jobid: 1
+    resources: tmpdir=/var/folders/2q/srp24kx525982p1wr0crt0tc0000gq/T
+
+Downloading from remote: gitlab.com/treangenlab/emu/-/archive/v1.0.1/emu-v1.0.1.tar.gz
+Terminating processes on user request, this might take some time.
+Complete log: /Users/a1667917/Documents/Pipelines/16S_Emu_Pipeline/.snakemake/log/2022-01-27T172608.455912.snakemake.log

@@ -47,8 +47,11 @@ rule get_db:
         "DB/unique_taxids.tsv"
     shell:
         """
-        wget -qO- {input.url} | tar -C {params.emu_db} -xvz --strip-components=2 emu-v1.0.1/emu_database/
-        rm -rf 'gitlab.com'
+        wget {input.url}
+        mkdir -p {params.emu_db}
+        tar -xf emu-v1.0.1.tar.gz -C {params.emu_db}
+        mv {params.emu_db}/emu-v1.0.1/emu_database/* {params.emu_db}
+        rm -rf {params.emu_db}/emu-v1.0.1
         """
 
 rule emu:

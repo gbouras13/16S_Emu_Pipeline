@@ -1,0 +1,45 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+emu                3              0              0
+get_db             1              1              1
+krona              3              1              1
+krona_input        3              1              1
+read_count         2              1              1
+total             13              0              1
+
+Select jobs to execute...
+
+[Thu Jan 27 17:26:47 2022]
+rule get_db:
+    input: gitlab.com/treangenlab/emu/-/archive/v1.0.1/emu-v1.0.1.tar.gz
+    output: DB, DB/species_taxid.fasta, DB/names_df.tsv, DB/nodes_df.tsv, DB/unique_taxids.tsv
+    jobid: 1
+    resources: tmpdir=/var/folders/2q/srp24kx525982p1wr0crt0tc0000gq/T
+
+Downloading from remote: gitlab.com/treangenlab/emu/-/archive/v1.0.1/emu-v1.0.1.tar.gz
+Finished download.
+[Thu Jan 27 17:26:55 2022]
+Error in rule get_db:
+    jobid: 1
+    output: DB, DB/species_taxid.fasta, DB/names_df.tsv, DB/nodes_df.tsv, DB/unique_taxids.tsv
+    shell:
+        
+        wget gitlab.com/treangenlab/emu/-/archive/v1.0.1/emu-v1.0.1.tar.gz
+        mkdir DB
+        tar -xf emu-v1.0.1.tar.gz -C DB
+        mv DB/emu-v1.0.1/emu_database/* DB
+        rm -rf DB/emu-v1.0.1
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job get_db since they might be corrupted:
+DB
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /Users/a1667917/Documents/Pipelines/16S_Emu_Pipeline/.snakemake/log/2022-01-27T172646.703466.snakemake.log
