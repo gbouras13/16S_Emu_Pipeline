@@ -1,0 +1,35 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job stats:
+job      count    min threads    max threads
+-----  -------  -------------  -------------
+all          1              1              1
+emu          3             16             16
+total        4              1             16
+
+Select jobs to execute...
+
+[Thu Jan 27 13:42:24 2022]
+rule emu:
+    input: fastqs/porechopped/barcode03.fastq.gz
+    output: emu_results/barcode03_rel-abundance-threshold-0.01.tsv, emu_results/barcode03_reads.txt
+    jobid: 3
+    wildcards: sample=barcode03
+    threads: 16
+    resources: tmpdir=/var/folders/2q/srp24kx525982p1wr0crt0tc0000gq/T
+
+Terminating processes on user request, this might take some time.
+[Thu Jan 27 13:42:27 2022]
+Error in rule emu:
+    jobid: 3
+    output: emu_results/barcode03_rel-abundance-threshold-0.01.tsv, emu_results/barcode03_reads.txt
+    shell:
+        
+        emu abundance fastqs/porechopped/barcode03.fastq.gz --threads 16 --min-abundance 0.01 --db DB --output-dir emu_results --output-basename barcode03 --keep-files
+        echo $(cat fastqs/porechopped/barcode03.fastq.gz|wc -l)/4|bc >
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: /Users/a1667917/Documents/Pipelines/16S_Emu_Pipeline/.snakemake/log/2022-01-27T134223.378452.snakemake.log

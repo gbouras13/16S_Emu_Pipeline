@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in line 26 of /Users/a1667917/Documents/Pipelines/16S_Emu_Pipeline/emu.smk:
+Missing input files for rule all:
+emu_results/barcode01_rel-abundance-threshold-0.01.tsv
+emu_results/barcode02_rel-abundance-threshold-0.01.tsv

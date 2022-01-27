@@ -1,0 +1,34 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+emu                3             16             16
+get_db             1              1              1
+krona              3              1              1
+krona_input        3              1              1
+total             11              1             16
+
+Select jobs to execute...
+
+[Thu Jan 27 14:45:00 2022]
+rule get_db:
+    input: gitlab.com/treangenlab/emu/-/archive/v1.0.1/emu-v1.0.1.tar.gz
+    output: DB, DB/species_taxid.fasta, DB/names_df.tsv, DB/nodes_df.tsv, DB/unique_taxids.tsv
+    jobid: 1
+    resources: tmpdir=/var/folders/2q/srp24kx525982p1wr0crt0tc0000gq/T
+
+Downloading from remote: gitlab.com/treangenlab/emu/-/archive/v1.0.1/emu-v1.0.1.tar.gz
+Finished download.
+ImproperOutputException in line 34 of /Users/a1667917/Documents/Pipelines/16S_Emu_Pipeline/emu.smk:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule get_db:
+DB
+Removing output files of failed job get_db since they might be corrupted:
+DB, DB/species_taxid.fasta, DB/names_df.tsv, DB/nodes_df.tsv, DB/unique_taxids.tsv
+[Errno 66] Directory not empty: 'DB'
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /Users/a1667917/Documents/Pipelines/16S_Emu_Pipeline/.snakemake/log/2022-01-27T144458.048808.snakemake.log
