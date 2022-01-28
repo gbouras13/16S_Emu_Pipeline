@@ -1,5 +1,5 @@
-# 16S_Kraken2_Pipeline
-Snakemake Pipeline to Taxonomically Classify Nanopore Long Read 16S Datasets
+# 16S_Emu_Pipeline
+Snakemake Pipeline to Taxonomically Classify Nanopore Long Read 16S Datasets using Emu
 
 This is a Work in Progress.
 
@@ -57,5 +57,5 @@ With 16 cores:
 snakemake -s emu.smk -c 16
 ```
 
-* This will run emu each sample, and will output tsvs with relative abundances "{sample}_rel-abundance.tsv" and "{sample}_rel-abundance-threshold-0.01.tsv" (in the emu_results directory).
+* This will run emu (https://gitlab.com/treangenlab/emu) on each sample, and will output tsvs with relative abundances "{sample}_rel-abundance.tsv" and "{sample}_rel-abundance-threshold-0.01.tsv" (in the emu_results directory).
 * The script will also create Krona plots for each sample in the krona directory.

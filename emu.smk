@@ -34,9 +34,6 @@ rule all:
         krona_output = expand('krona/{sample}_krona.html', sample = SAMPLES.index)
 
 rule get_db:
-    input:
-        # Some file from the web
-        url=HTTP.remote("https://gitlab.com/treangenlab/emu/-/archive/v1.0.1/emu-v1.0.1.tar.gz", keep_local=True)
     params:
         emu_db = EMU_DB_DIR
     output:
@@ -47,11 +44,12 @@ rule get_db:
         "DB/unique_taxids.tsv"
     shell:
         """
-        wget {input.url}
+        wget "https://gitlab.com/treangenlab/emu/-/archive/v1.0.1/emu-v1.0.1.tar.gz"
         mkdir -p {params.emu_db}
         tar -xf emu-v1.0.1.tar.gz -C {params.emu_db}
         mv {params.emu_db}/emu-v1.0.1/emu_database/* {params.emu_db}
         rm -rf {params.emu_db}/emu-v1.0.1
+        rm emu-v1.0.1.tar.gz
         """
 
 rule emu:
