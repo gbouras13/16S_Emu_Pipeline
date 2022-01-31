@@ -63,7 +63,7 @@ rule emu:
     output:
         abundance = 'emu_results/{sample}_rel-abundance-threshold-0.01.tsv'
     threads:
-        workflow.cores * 0.9
+        64
     shell:
         '''
         emu abundance {input.fastqs} --threads {threads} --min-abundance {params.abundance} --db {params.emu_db} --output-dir {params.out_dir} --output-basename {wildcards.sample}
