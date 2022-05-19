@@ -54,7 +54,7 @@ rule get_db:
 
 rule emu:
     input:
-        fastqs = 'fastqs/porechopped/{sample}.fastq.gz',
+        fastqs = 'fastqs/filtlong_fastqs/{sample}.fastq.gz',
         taxids = "DB/species_taxid.fasta"
     params:
         emu_db = EMU_DB_DIR,
@@ -71,7 +71,7 @@ rule emu:
 
 rule read_count:
     input:
-        'fastqs/porechopped/{sample}.fastq.gz'
+        'fastqs/filtlong_fastqs/{sample}.fastq.gz'
     output:
         reads = 'emu_results/{sample}_readcount.txt'
 
