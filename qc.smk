@@ -9,8 +9,8 @@ import os
 SAMPLES = pd.read_csv("metadata.csv").set_index("samples", drop=False)
 
 # filtlong params
-MIN_LENGTH = 1400
-MAX_LENGTH = 1700
+MIN_LENGTH = 1300
+MAX_LENGTH = 1800
 KEEP_PERCENT = 99
 
 def getFastqGzFilesForConcat(wildcards):
@@ -23,7 +23,7 @@ def getFastqGzFilesForConcat(wildcards):
 
 rule all:
     input:
-        porechops = expand('fastqs/porechopped/{sample}.fastq.gz', sample = SAMPLES.index),
+        #porechops = expand('fastqs/porechopped/{sample}.fastq.gz', sample = SAMPLES.index),
         nanoplots = expand("nanoplot/{sample}", sample = SAMPLES.index),
 
 rule concatenate_fastqs:
@@ -49,22 +49,22 @@ rule filtlong:
         rm {input}
         '''
 
-rule porechop:
-    input:
-        'fastqs/filtlong_fastqs/{sample}.fastq.gz'
-    output:
-        'fastqs/porechopped/{sample}.fastq.gz'
-    threads:
-        16
-    shell:
-        '''
-        porechop -i {input} -o {output} --threads {threads}
-        rm {input}
-        '''
+# rule porechop:
+#     input:
+#         'fastqs/filtlong_fastqs/{sample}.fastq.gz'
+#     output:
+#         'fastqs/porechopped/{sample}.fastq.gz'
+#     threads:
+#         16
+#     shell:
+#         '''
+#         porechop -i {input} -o {output} --threads {threads}
+#         rm {input}
+#         '''
 
 rule nanoplot:
     input:
-        'fastqs/porechopped/{sample}.fastq.gz'
+        'fastqs/filtlong_fastqs/{sample}.fastq.gz'
     output:
         dir = directory("nanoplot/{sample}")
     threads:
