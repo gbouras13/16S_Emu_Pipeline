@@ -1,3 +1,0 @@
-NameError in line 63 of /Users/a1667917/Documents/Pipelines/16S_Emu_Pipeline/emu.smk:
-name 'sample' is not defined
-  File "/Users/a1667917/Documents/Pipelines/16S_Emu_Pipeline/emu.smk", line 63, in <module>

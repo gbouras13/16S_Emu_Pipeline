@@ -1,4 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 51 of /Users/a1667917/Documents/Pipelines/16S_Emu_Pipeline/emu.smk:
-Missing input files for rule emu:
-DB
