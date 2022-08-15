@@ -18,7 +18,7 @@ rule filtlong:
         1
     shell:
         '''
-        filtlong --min_length {params.min_read_size} --max_length {params.max_read_size} --min_mean_q {params.keep_percent} {input} | gzip > {output}
+        filtlong --min_length {params.min_read_size} --max_length {params.max_read_size} --min_mean_q {params.max_q_score} {input} | gzip > {output}
         rm {input}
         '''
 
