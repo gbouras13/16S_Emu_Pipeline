@@ -13,7 +13,7 @@ rule filtlong:
     resources:
         mem_mb=SmallJobMem
     conda:
-        os.path.join('..', 'envs','qc.yaml')
+        os.path.join('..', 'envs','filtlong.yaml')
     threads:
         1
     shell:
@@ -32,7 +32,7 @@ rule nanoplot:
     resources:
         mem_mb=SmallJobMem
     conda:
-        os.path.join('..', 'envs','qc.yaml')
+        os.path.join('..', 'envs','nanoplot.yaml')
     threads:
         BigJobCpu
     shell:
