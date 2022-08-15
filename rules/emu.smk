@@ -37,7 +37,7 @@ rule krona_input:
     conda:
         os.path.join('..', 'envs','emu.yaml')
     script:
-        'Scripts/create_tsv_for_krona.py'
+        '../Scripts/create_tsv_for_krona.py'
 
 rule krona:
     input:
