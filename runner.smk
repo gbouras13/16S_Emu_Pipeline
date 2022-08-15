@@ -28,6 +28,8 @@ include: "rules/directories.smk"
 # get if needed
 INPUT_CSV = config['csv']
 OUTPUT = config['Output']
+# overwrite Emu DB
+EMU_DB_DIR = config['Emu_DB']
 
 # Parse the samples and read files
 include: "rules/samples.smk"

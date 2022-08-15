@@ -25,10 +25,10 @@ module load Anaconda3/2020.07
 conda activate snakemake_clean_env
 
 snakemake -c 1 -s runner.smk --use-conda --profile $PROF_DIR/bact_assembly --conda-frontend conda \
---config csv=kenny_31_05_metadata.csv Output=/hpcfs/users/a1667917/Kenny/31_05_Output EMU_DB_DIR=/hpcfs/users/a1667917/Emu_DB
+--config csv=kenny_31_05_metadata.csv Output=/hpcfs/users/a1667917/Kenny/31_05_Output Emu_DB=/hpcfs/users/a1667917/Emu_DB
 
 # snakemake -c 1 -s runner.smk --use-conda --conda-frontend conda --conda-create-envs-only \
-# --config csv=kenny_31_05_metadata.csv Output=/hpcfs/users/a1667917/Kenny/31_05_Output EMU_DB_DIR=/hpcfs/users/a1667917/Emu_DB
+# --config csv=kenny_31_05_metadata.csv Output=/hpcfs/users/a1667917/Kenny/31_05_Output Emu_DB=/hpcfs/users/a1667917/Emu_DB
 
 
 conda deactivate
