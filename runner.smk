@@ -39,6 +39,7 @@ SAMPLES = list(dictReads.keys())
 include: "rules/targets.smk"
 
 # Import rules and functions
+include: "rules/qc.smk"
 include: "rules/emu.smk"
 
 rule all:
