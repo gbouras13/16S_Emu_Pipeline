@@ -19,7 +19,6 @@ rule filtlong:
     shell:
         '''
         filtlong --min_length {params.min_read_size} --max_length {params.max_read_size} --min_mean_q {params.max_q_score} {input} | gzip > {output}
-        rm {input}
         '''
 
 rule nanoplot:
