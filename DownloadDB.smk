@@ -30,12 +30,12 @@ rule get_db:
         os.path.join(EMU_DB_DIR,"unique_taxids.tsv")
     shell:
         """
-        wget "https://gitlab.com/treangenlab/emu/-/archive/v1.0.1/emu-v1.0.1.tar.gz"
+        wget "https://gitlab.com/treangenlab/emu/-/archive/v3.0.0/emu-v3.0.0.tar.gz"
         mkdir -p {params.emu_db}
-        tar -xf emu-v1.0.1.tar.gz -C {params.emu_db}
-        mv {params.emu_db}/emu-v1.0.1/emu_database/* {params.emu_db}
-        rm -rf {params.emu_db}/emu-v1.0.1
-        rm emu-v1.0.1.tar.gz
+        tar -xf emu-v3.0.0.tar.gz -C {params.emu_db}
+        mv {params.emu_db}/emu-v3.0.0/emu_database/* {params.emu_db}
+        rm -rf {params.emu_db}/emu-v3.0.0
+        rm emu-v3.0.0.tar.gz
         """
 
 
