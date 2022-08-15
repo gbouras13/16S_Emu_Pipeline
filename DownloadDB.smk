@@ -15,19 +15,15 @@ if not os.path.exists(os.path.join(EMU_DB_DIR)):
 
 rule all:
     input:
-        os.path.join(EMU_DB_DIR,"species_taxid.fasta"),
-        os.path.join(EMU_DB_DIR,"names_df.tsv"),
-        os.path.join(EMU_DB_DIR,"nodes_df.tsv"),
-        os.path.join(EMU_DB_DIR,"unique_taxids.tsv")
+        os.path.join(EMU_DB_DIR,"taxonomy.tsv"),
+        os.path.join(EMU_DB_DIR,"species_taxid.fasta")
 
 rule get_db:
     params:
         emu_db = EMU_DB_DIR
     output:
-        os.path.join(EMU_DB_DIR,"species_taxid.fasta"),
-        os.path.join(EMU_DB_DIR,"names_df.tsv"),
-        os.path.join(EMU_DB_DIR,"nodes_df.tsv"),
-        os.path.join(EMU_DB_DIR,"unique_taxids.tsv")
+        os.path.join(EMU_DB_DIR,"taxonomy.tsv"),
+        os.path.join(EMU_DB_DIR,"species_taxid.fasta")
     shell:
         """
         wget "https://gitlab.com/treangenlab/emu/-/archive/v3.0.0/emu-v3.0.0.tar.gz"
