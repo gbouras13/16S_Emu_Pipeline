@@ -1,12 +1,10 @@
 # 16S_Emu_Pipeline
 Snakemake Pipeline to Taxonomically Classify Nanopore Long Read 16S Datasets using Emu
 
-This is a Work in Progress.
-
 The only inputs required are:
-1. Basecalled fastqs placed in separate folders in the fastqs directory, with subdirectories for each sample;
-2. All samples (matching the subdirectories in the fastqs folder) listed in the sample column of the metadata.csv file.
-* In the example data, the samples are barcode01, barcode02 and barcode03
+1. Basecalled concatenated .fastq.gz files
+2. A .csv file with metadata matching the fastq.gz file to the sample number.
+3. an output directory specified
 
 # Usage
 
@@ -26,6 +24,9 @@ With 16 cores:
 ```console
 snakemake -s qc.smk -c 16
 ```
+
+# Output
+
 
 * This will output fastqs in the fastqs/porechopped directory named for each sample. The fastqs have been filtered using filtlong (https://github.com/rrwick/Filtlong#acknowledgements) and had adapters and barcodes removed with porechop (https://github.com/rrwick/Porechop).
 * It will also output summary qc plots and statistics in the Nanoplot directory.
