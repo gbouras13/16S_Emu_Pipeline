@@ -1,13 +1,14 @@
 """
 Snakefile for downloading the Emu DB. Only need to run this once.
 
-snakemake -c 1 -s DownloadDB.smk --config EMU_DB_DIR=DB
+snakemake -c 1 -s DownloadDB.smk --config Emu_DB=DB
 
 """
 
 # instantiate the EMU_DB_DIR
 
 EMU_DB_DIR="DB"
+EMU_DB_DIR=config['Emu_DB']
 
 if not os.path.exists(os.path.join(EMU_DB_DIR)):
     os.makedirs(os.path.join(EMU_DB_DIR))
