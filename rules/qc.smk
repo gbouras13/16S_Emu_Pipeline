@@ -26,6 +26,8 @@ rule nanoplot:
     input:
         os.path.join(TMP,"{sample}_filtlong.fastq.gz")
     output:
+        os.path.join(NANOPLOT,"{sample}", "passNanoStats.txt")
+    params:
         directory(os.path.join(NANOPLOT,"{sample}"))
     resources:
         mem_mb=SmallJobMem
@@ -34,13 +36,13 @@ rule nanoplot:
     threads:
         BigJobCpu
     shell:
-        'NanoPlot --prefix pass --fastq {input} -t {threads} -o {output}'
+        'NanoPlot --prefix pass --fastq {input} -t {threads} -o {params}'
 
     
 rule aggr_qc:
     input:
         expand( os.path.join(TMP,"{sample}_filtlong.fastq.gz"), sample = SAMPLES),
-        expand( directory(os.path.join(NANOPLOT,"{sample}")), sample = SAMPLES)
+        expand( os.path.join(NANOPLOT,"{sample}", "passNanoStats.txt"), sample = SAMPLES)
     output:
         os.path.join(LOGS, "aggr_qc.txt")
     threads:
