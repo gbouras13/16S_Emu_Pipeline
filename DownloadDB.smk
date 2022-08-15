@@ -1,11 +1,13 @@
 """
 Snakefile for downloading the Emu DB. Only need to run this once.
 
-snakemake -c 1 -s DownloadDB.smk
+snakemake -c 1 -s DownloadDB.smk --config EMU_DB_DIR=DB
 
 """
 
 # instantiate the EMU_DB_DIR
+
+EMU_DB_DIR="DB"
 
 if not os.path.exists(os.path.join(EMU_DB_DIR)):
     os.makedirs(os.path.join(EMU_DB_DIR))
@@ -13,10 +15,10 @@ if not os.path.exists(os.path.join(EMU_DB_DIR)):
 
 rule all:
     input:
-        db_output.append("DB/species_taxid.fasta")
-        db_output.append("DB/names_df.tsv")
-        db_output.append("DB/nodes_df.tsv")
-        db_output.append("DB/unique_taxids.tsv")
+        os.path.join(EMU_DB_DIR,"species_taxid.fasta"),
+        os.path.join(EMU_DB_DIR,"names_df.tsv"),
+        os.path.join(EMU_DB_DIR,"nodes_df.tsv"),
+        os.path.join(EMU_DB_DIR,"unique_taxids.tsv")
 
 rule get_db:
     params:
