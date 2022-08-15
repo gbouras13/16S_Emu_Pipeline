@@ -5,7 +5,7 @@ rule filtlong:
         os.path.join(TMP,"{sample}_filtlong.fastq.gz")
     params:
         min_read_size = MIN_LENGTH,
-        max_read_size = MAX_LENGTH
+        max_read_size = MAX_LENGTH,
         max_q_score = MIN_QUALITY
     resources:
         mem_mb=SmallJobMem
@@ -36,8 +36,8 @@ rule nanoplot:
     
 rule aggr_qc:
     input:
-        expand( os.path.join(TMP,"{sample}_filtlong.fastq.gz"), sample = SAMPLES)
-        expand( directory(os.path.join(NANOPLOT,"{sample}")), sample = SAMPLES),
+        expand( os.path.join(TMP,"{sample}_filtlong.fastq.gz"), sample = SAMPLES),
+        expand( directory(os.path.join(NANOPLOT,"{sample}")), sample = SAMPLES)
     output:
         os.path.join(LOGS, "aggr_qc.txt")
     threads:
