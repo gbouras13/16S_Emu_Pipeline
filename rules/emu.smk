@@ -3,7 +3,7 @@ rule emu:
         fastqs = os.path.join(TMP,"{sample}_filtlong.fastq.gz")
     params:
         db = EMU_DB_DIR,
-        out_dir = os.path.join(EMU,"{sample}")
+        out_dir = os.path.join(EMU,"{sample}"),
         min_abundance = MIN_ABUNDANCE
     output:
         abundance = os.path.join(EMU,"{sample}",'{sample}_rel-abundance-threshold-0.001.tsv')
