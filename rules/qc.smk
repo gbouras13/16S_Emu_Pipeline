@@ -1,6 +1,9 @@
+def get_input_fastqs(wildcards):
+    return dictReads[wildcards.sample]["LR"]
+
 rule filtlong:
     input:
-        os.path.join(INPUT, "{sample}.fastq.gz")
+        get_input_fastqs
     output:
         os.path.join(TMP,"{sample}_filtlong.fastq.gz")
     params:
