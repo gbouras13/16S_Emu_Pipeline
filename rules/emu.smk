@@ -53,7 +53,7 @@ rule krona:
 
 rule aggr_emu:
     input:
-        expand(os.path.join(EMU,"{sample}",'{sample}_rel-abundance.tsv'), sample = SAMPLES),
+        expand(os.path.join(EMU,"{sample}",'{sample}_rel-abundance-threshold-0.001.tsv'), sample = SAMPLES),
         expand(os.path.join(KRONA,'{sample}_krona.html'), sample = SAMPLES)
     output:
         os.path.join(LOGS, "aggr_emu.txt")
