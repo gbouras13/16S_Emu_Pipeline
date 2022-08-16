@@ -6,7 +6,7 @@ rule emu:
         out_dir = os.path.join(EMU,"{sample}"),
         min_abundance = MIN_ABUNDANCE
     output:
-        abundance = os.path.join(EMU,"{sample}",'{sample}_rel-abundance.tsv')
+        abundance = os.path.join(EMU,"{sample}",'{sample}_rel-abundance-threshold-0.001.tsv')
     threads:
         BigJobCpu
     resources:
