@@ -6,7 +6,7 @@ rule emu:
         out_dir = os.path.join(EMU,"{sample}"),
         min_abundance = MIN_ABUNDANCE
     output:
-        abundance = os.path.join(EMU,"{sample}",'{sample}_rel-abundance-threshold-0.001.tsv')
+        abundance = os.path.join(EMU,"{sample}",'{sample}_rel-abundance.tsv')
     threads:
         BigJobCpu
     resources:
@@ -30,7 +30,7 @@ rule read_count:
 
 rule krona_input:
     input:
-        abundance = os.path.join(EMU,"{sample}",'{sample}_rel-abundance-threshold-0.001.tsv'),
+        abundance = os.path.join(EMU,"{sample}",'{sample}_rel-abundance.tsv'),
         reads = os.path.join(EMU,"{sample}",'{sample}_readcount.txt')
     output:
         reads = os.path.join(EMU,"{sample}",'{sample}_krona_input.txt')
@@ -53,7 +53,7 @@ rule krona:
 
 rule aggr_emu:
     input:
-        expand(os.path.join(EMU,"{sample}",'{sample}_rel-abundance-threshold-0.001.tsv'), sample = SAMPLES),
+        expand(os.path.join(EMU,"{sample}",'{sample}_rel-abundance.tsv'), sample = SAMPLES),
         expand(os.path.join(KRONA,'{sample}_krona.html'), sample = SAMPLES)
     output:
         os.path.join(LOGS, "aggr_emu.txt")
