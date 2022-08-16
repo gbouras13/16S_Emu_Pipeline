@@ -30,7 +30,7 @@ rule read_count:
 
 rule krona_input:
     input:
-        abundance = os.path.join(EMU,"{sample}",'{sample}_rel-abundance.tsv'),
+        abundance = os.path.join(EMU,"{sample}",'{sample}_rel-abundance-threshold-0.001.tsv'),
         reads = os.path.join(EMU,"{sample}",'{sample}_readcount.txt')
     output:
         reads = os.path.join(EMU,"{sample}",'{sample}_krona_input.txt')
