@@ -1,3 +1,0 @@
-CreateRuleException in line 85 of /Users/a1667917/Documents/Pipelines/16S_Emu_Pipeline/emu.smk:
-The name read_count is already used by another rule
-  File "/Users/a1667917/Documents/Pipelines/16S_Emu_Pipeline/emu.smk", line 85, in <module>
