@@ -13,7 +13,7 @@ snakemake -c 16 -s runner.smk --use-conda     \
 import os
 
 ### DEFAULT CONFIGs
-BigJobMem = 50000
+BigJobMem = 250000
 SmallJobMem = 5000
 BigJobCpu = 16
 MIN_LENGTH = 1300
