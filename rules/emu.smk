@@ -10,7 +10,8 @@ rule emu:
     threads:
         BigJobCpu
     resources:
-        mem_mb=BigJobMem
+        mem_mb=BigJobMem,
+        time=2880
     conda:
         os.path.join('..', 'envs','emu.yaml')
     shell:
