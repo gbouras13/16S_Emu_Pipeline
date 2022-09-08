@@ -1,5 +1,5 @@
-1_1,/hpcfs/users/a1667917/Sha/DFU_06_09_22/aggregated_fastqs/barcode01.fastq.gz
-1_2,/hpcfs/users/a1667917/Sha/DFU_06_09_22/aggregated_fastqs/barcode02.fastq.gz
+1_1,/hpcfs/users/a1667917/Sha/DFU_06_09_22/aggregated_fastqs/barcode01_reduced.fastq.gz
+1_2,/hpcfs/users/a1667917/Sha/DFU_06_09_22/aggregated_fastqs/barcode02_reduced.fastq.gz
 1_3,/hpcfs/users/a1667917/Sha/DFU_06_09_22/aggregated_fastqs/barcode03.fastq.gz
 1_4,/hpcfs/users/a1667917/Sha/DFU_06_09_22/aggregated_fastqs/barcode04.fastq.gz
 1_5,/hpcfs/users/a1667917/Sha/DFU_06_09_22/aggregated_fastqs/barcode05.fastq.gz
@@ -14,7 +14,7 @@
 1_14,/hpcfs/users/a1667917/Sha/DFU_06_09_22/aggregated_fastqs/barcode14.fastq.gz
 1_15,/hpcfs/users/a1667917/Sha/DFU_06_09_22/aggregated_fastqs/barcode15.fastq.gz
 1_16,/hpcfs/users/a1667917/Sha/DFU_06_09_22/aggregated_fastqs/barcode16.fastq.gz
-1_17,/hpcfs/users/a1667917/Sha/DFU_06_09_22/aggregated_fastqs/barcode17.fastq.gz
+1_17,/hpcfs/users/a1667917/Sha/DFU_06_09_22/aggregated_fastqs/barcode17_reduced.fastq.gz
 1_18,/hpcfs/users/a1667917/Sha/DFU_06_09_22/aggregated_fastqs/barcode18.fastq.gz
 1_19,/hpcfs/users/a1667917/Sha/DFU_06_09_22/aggregated_fastqs/barcode19.fastq.gz
 1_20,/hpcfs/users/a1667917/Sha/DFU_06_09_22/aggregated_fastqs/barcode20.fastq.gz
