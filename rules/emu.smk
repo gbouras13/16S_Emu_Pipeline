@@ -11,7 +11,7 @@ rule emu:
         BigJobCpu
     resources:
         mem_mb=BigJobMem,
-        time=2880
+        time=1300
     conda:
         os.path.join('..', 'envs','emu.yaml')
     shell:
