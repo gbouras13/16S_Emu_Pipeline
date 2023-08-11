@@ -1,6 +1,9 @@
 # 16S_Emu_Pipeline
 Snakemake Pipeline to Taxonomically Classify Nanopore Long Read 16S Datasets using Emu
 
+**This pipeline is deprecated and not supported. Please use [coatofarms](https://github.com/gbouras13/coatofarms) instead!!!**
+
+
 The only inputs required are:
 1. Basecalled concatenated .fastq.gz files
 2. A .csv file with metadata matching the fastq.gz file to the sample number.
